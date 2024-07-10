@@ -7,6 +7,7 @@ import { LocalStarategy } from './syrategies/local.strategy';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { JwtStrategy } from './syrategies/jwt.strategy';
 
 @Module({
   imports: [
@@ -24,6 +25,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, LocalStarategy],
+  providers: [AuthService, LocalStarategy, JwtStrategy],
 })
 export class AuthModule {}
